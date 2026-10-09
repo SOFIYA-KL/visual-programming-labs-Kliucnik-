@@ -1,0 +1,76 @@
+[
+    {
+        "id": "b25f0b03e554ca7e",
+        "type": "tab",
+        "label": "flow-12-context",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fa7d262fb6b4be2e",
+        "type": "inject",
+        "z": "b25f0b03e554ca7e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 260,
+        "wires": [
+            [
+                "1481f5f9fab78ed0"
+            ]
+        ]
+    },
+    {
+        "id": "bfe4ba036a599f6e",
+        "type": "debug",
+        "z": "b25f0b03e554ca7e",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "1481f5f9fab78ed0",
+        "type": "function",
+        "z": "b25f0b03e554ca7e",
+        "name": "function 6",
+        "func": "let counter = flow.get(\"counter\") || 0;\ncounter = counter + 1;\nflow.set(\"counter\", counter);\nmsg.payload = {\n    counter: counter,\n    message: \"Счётчик в flow context. Кликни inject ещё раз — число вырастет.\"\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 260,
+        "wires": [
+            [
+                "bfe4ba036a599f6e"
+            ]
+        ]
+    }
+]

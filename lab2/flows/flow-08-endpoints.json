@@ -1,0 +1,157 @@
+[
+    {
+        "id": "476d96b72752c96b",
+        "type": "tab",
+        "label": "flow-08-endpoints",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "dbc21b7e48dcce6b",
+        "type": "http in",
+        "z": "476d96b72752c96b",
+        "name": "",
+        "url": "/api/text",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 120,
+        "wires": [
+            [
+                "416307cb8598fc1b"
+            ]
+        ]
+    },
+    {
+        "id": "63f549698cd74b02",
+        "type": "http response",
+        "z": "476d96b72752c96b",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 560,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "cbb411b50e419354",
+        "type": "http in",
+        "z": "476d96b72752c96b",
+        "name": "",
+        "url": "/api/info",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 180,
+        "wires": [
+            [
+                "c5840fd365e40716"
+            ]
+        ]
+    },
+    {
+        "id": "c5840fd365e40716",
+        "type": "function",
+        "z": "476d96b72752c96b",
+        "name": "function 3",
+        "func": "msg.payload = { app: \"lab2\", author: \"Kliuchnik\" };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 180,
+        "wires": [
+            [
+                "f32750c5099f829a"
+            ]
+        ]
+    },
+    {
+        "id": "f32750c5099f829a",
+        "type": "http response",
+        "z": "476d96b72752c96b",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 580,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "9660d0f4a07ed279",
+        "type": "http in",
+        "z": "476d96b72752c96b",
+        "name": "",
+        "url": "/api/items",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 180,
+        "y": 260,
+        "wires": [
+            [
+                "4ee8165b838e838c"
+            ]
+        ]
+    },
+    {
+        "id": "58f80c10f0291415",
+        "type": "http response",
+        "z": "476d96b72752c96b",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 550,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "4ee8165b838e838c",
+        "type": "function",
+        "z": "476d96b72752c96b",
+        "name": "function 4",
+        "func": "const id = msg.req.query.id;\nif (!id) {\n    msg.statusCode = 400;\n    msg.payload = { error: \"missing id\" };\n    return msg;\n}\nif (id !== \"1\" && id !== \"2\" && id !== \"3\") {\n    msg.statusCode = 404;\n    msg.payload = { error: \"not found\" };\n    return msg;\n}\nmsg.statusCode = 200;\nmsg.payload = { id: id, name: \"item-\" + id };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 260,
+        "wires": [
+            [
+                "58f80c10f0291415"
+            ]
+        ]
+    },
+    {
+        "id": "416307cb8598fc1b",
+        "type": "function",
+        "z": "476d96b72752c96b",
+        "name": "function 5",
+        "func": "msg.payload = \"Hello from Node-RED\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 120,
+        "wires": [
+            [
+                "63f549698cd74b02"
+            ]
+        ]
+    }
+]

@@ -1,0 +1,93 @@
+[
+    {
+        "id": "a9be87c5d77547dd",
+        "type": "tab",
+        "label": "flow-04-change",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ac438825f4a22e7a",
+        "type": "inject",
+        "z": "a9be87c5d77547dd",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "hello",
+        "payloadType": "str",
+        "x": 70,
+        "y": 80,
+        "wires": [
+            [
+                "9a4b19a97feb2521"
+            ]
+        ]
+    },
+    {
+        "id": "410c6926b3065819",
+        "type": "debug",
+        "z": "a9be87c5d77547dd",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "9a4b19a97feb2521",
+        "type": "change",
+        "z": "a9be87c5d77547dd",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "lab2/Kliuchnik/change",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "timestamp",
+                "pt": "msg",
+                "to": "",
+                "tot": "date"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "changed by change node",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 80,
+        "wires": [
+            [
+                "410c6926b3065819"
+            ]
+        ]
+    }
+]

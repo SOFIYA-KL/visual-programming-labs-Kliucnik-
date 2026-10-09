@@ -1,0 +1,71 @@
+[
+    {
+        "id": "2aa29af890d730fb",
+        "type": "tab",
+        "label": "flow-05-template",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b0fae897eca09114",
+        "type": "template",
+        "z": "2aa29af890d730fb",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n  \"student\": \"{{payload.name}}\",\n  \"age\": {{payload.age}},\n  \"city\": \"{{payload.city}}\",\n  \"greeting\": \"Hello, {{payload.name}} from {{payload.city}}!\"\n}",
+        "output": "str",
+        "x": 360,
+        "y": 160,
+        "wires": [
+            [
+                "6f2103125b0239d3"
+            ]
+        ]
+    },
+    {
+        "id": "33b7bcaa0998ba89",
+        "type": "inject",
+        "z": "2aa29af890d730fb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"name\":\"Kliuchnik\",\"age\":20,\"city\":\"Minsk\"}",
+        "payloadType": "json",
+        "x": 100,
+        "y": 160,
+        "wires": [
+            [
+                "b0fae897eca09114"
+            ]
+        ]
+    },
+    {
+        "id": "6f2103125b0239d3",
+        "type": "debug",
+        "z": "2aa29af890d730fb",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 160,
+        "wires": []
+    }
+]

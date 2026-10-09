@@ -1,0 +1,76 @@
+[
+    {
+        "id": "57b826c48a3496a3",
+        "type": "tab",
+        "label": "flow-02-function",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "706662b820cf68d8",
+        "type": "inject",
+        "z": "57b826c48a3496a3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "7",
+        "payloadType": "num",
+        "x": 70,
+        "y": 80,
+        "wires": [
+            [
+                "b0c54d59c708ad23"
+            ]
+        ]
+    },
+    {
+        "id": "b0c54d59c708ad23",
+        "type": "function",
+        "z": "57b826c48a3496a3",
+        "name": "function 1",
+        "func": "let arr = [1, 2, 3, 4, 5];\nconst threshold = 3;\nlet sum = 0;\nfor (let i = 0; i < arr.length; i++) {\n    sum += arr[i];\n}\nlet result = {\n    input: msg.payload,\n    values: arr,\n    sum: sum,\n    status: sum > threshold ? \"big\" : \"small\"\n};\nmsg.payload = result;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 80,
+        "wires": [
+            [
+                "1ce9ecfc2ed7a671"
+            ]
+        ]
+    },
+    {
+        "id": "1ce9ecfc2ed7a671",
+        "type": "debug",
+        "z": "57b826c48a3496a3",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 80,
+        "wires": []
+    }
+]

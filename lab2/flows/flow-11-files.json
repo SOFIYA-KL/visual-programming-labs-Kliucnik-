@@ -1,0 +1,122 @@
+[
+    {
+        "id": "32c4c34e2225846c",
+        "type": "tab",
+        "label": "flow-11-files",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "12090e78b13d6f1d",
+        "type": "inject",
+        "z": "32c4c34e2225846c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"name\":\"Kliuchnik\",\"lab\":2}",
+        "payloadType": "json",
+        "x": 260,
+        "y": 300,
+        "wires": [
+            [
+                "6586f4c9c163bad6"
+            ]
+        ]
+    },
+    {
+        "id": "6586f4c9c163bad6",
+        "type": "file",
+        "z": "32c4c34e2225846c",
+        "name": "",
+        "filename": "D:\\Projects\\visual-programming-labs-Kliucnik-\\lab2\\data\\test.json",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "utf8",
+        "x": 710,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d51a907144a66cb6",
+        "type": "file in",
+        "z": "32c4c34e2225846c",
+        "name": "",
+        "filename": "D:\\Projects\\visual-programming-labs-Kliucnik-\\lab2\\data\\test.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "utf8",
+        "allProps": false,
+        "x": 630,
+        "y": 380,
+        "wires": [
+            [
+                "b0a236951aa087f9"
+            ]
+        ]
+    },
+    {
+        "id": "e2812b662ac1a11a",
+        "type": "inject",
+        "z": "32c4c34e2225846c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 380,
+        "wires": [
+            [
+                "d51a907144a66cb6"
+            ]
+        ]
+    },
+    {
+        "id": "b0a236951aa087f9",
+        "type": "debug",
+        "z": "32c4c34e2225846c",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 380,
+        "wires": []
+    }
+]
