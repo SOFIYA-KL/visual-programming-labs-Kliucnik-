@@ -1,0 +1,139 @@
+[
+    {
+        "id": "ef4078c9a8cc1d4e",
+        "type": "tab",
+        "label": "flow-10-telegram",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "82a404046234c246",
+        "type": "telegram command",
+        "z": "ef4078c9a8cc1d4e",
+        "name": "",
+        "command": "/start",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "0c6be8f8d7fac73b",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 70,
+        "y": 120,
+        "wires": [
+            [
+                "65afe734acd699de"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "65afe734acd699de",
+        "type": "function",
+        "z": "ef4078c9a8cc1d4e",
+        "name": "function 8",
+        "func": "msg.payload.content = \"Привет! Я бот lab2 Kliuchnik.\";\nmsg.payload.chatId = msg.payload.chatId;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 120,
+        "wires": [
+            [
+                "c37289b69747f9e6"
+            ]
+        ]
+    },
+    {
+        "id": "c37289b69747f9e6",
+        "type": "telegram sender",
+        "z": "ef4078c9a8cc1d4e",
+        "name": "",
+        "bot": "0c6be8f8d7fac73b",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 450,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "71bcd4e929fd043e",
+        "type": "telegram receiver",
+        "z": "ef4078c9a8cc1d4e",
+        "name": "",
+        "bot": "0c6be8f8d7fac73b",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "hasinput": false,
+        "inputs": 0,
+        "handleallupdates": false,
+        "handleprocessupdates": false,
+        "x": 90,
+        "y": 180,
+        "wires": [
+            [
+                "73784f9ecb5f9f9e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "73784f9ecb5f9f9e",
+        "type": "telegram sender",
+        "z": "ef4078c9a8cc1d4e",
+        "name": "",
+        "bot": "",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 290,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0c6be8f8d7fac73b",
+        "type": "telegram bot",
+        "botname": "kliuchnik_bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "testenvironment": false,
+        "updatemode": "polling",
+        "pollinterval": 300,
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": 6667,
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbothost": "0.0.0.0",
+        "localbotport": 8443,
+        "publicbotport": 8443,
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "fbf769106cfc10b9",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-telegrambot": "19.0.3"
+        }
+    }
+]
