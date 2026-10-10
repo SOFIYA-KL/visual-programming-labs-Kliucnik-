@@ -48,7 +48,7 @@ Commit: Add prompt and generation result
 **Что взяла в своё приложение:**
 Идеи для группировки карточек контактов и отступов.
 
-![Design Fundamentals](screenshots/02-buildguide-1.png)
+![Design Fundamentals](../screenshots/02-buildguide-1.png)
 
 ### Гайд 2: Fixed Repeating Group
 
@@ -62,7 +62,7 @@ Commit: Add prompt and generation result
 **Что взяла в своё приложение:**
 Улучшила список контактов — карточки с отступами.
 
-![Repeating Group](screenshots/02-buildguide-2.png)
+![Repeating Group](../screenshots/02-buildguide-2.png)
 
 ## Часть 3. Ручная доработка UI
 
