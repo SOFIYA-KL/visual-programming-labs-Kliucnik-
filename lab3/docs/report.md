@@ -64,11 +64,21 @@ Commit: Add prompt and generation result
 
 ![Repeating Group](../screenshots/02-buildguide-2.png)
 
-## Часть 3. Ручная доработка UI
+## Часть 3.1 Ручная доработка UI
 
 Изменила текст заголовка в Header (reusable element) с «База контактов» на «База контактов — София».
 
 ![Изменённый заголовок](../screenshots/03-header-change.png)
+
+### 3.2. Global variable для цвета
+
+В приложении есть глобальные переменные цветов (Variables → Colors):
+- **Primary** (#1325AE) — основной цвет кнопок
+- Text, Surface, Background и др.
+
+Применила переменную **Primary** к кнопке «Создать свою базу».
+
+![Global variables](../screenshots/03-global-variable.png)
 
 ## Часть 4. Data и Workflows
 
