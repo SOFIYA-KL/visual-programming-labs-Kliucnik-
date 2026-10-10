@@ -29,7 +29,7 @@
 
 ### Скриншот результата генерации
 
-![Результат генерации](screenshots/01-prompt.png)
+![Результат генерации][(screenshots/01-prompt.png)](https://github.com/SOFIYA-KL/visual-programming-labs-Kliucnik-/blob/main/lab3/docs/report.md)
 
 Commit: Add prompt and generation result
 
