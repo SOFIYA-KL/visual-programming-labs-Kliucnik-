@@ -1,126 +1,119 @@
-\# Лабораторная работа №2. Node-RED
+# Лабораторная работа №2. Node-RED
 
+**Технологии визуального программирования**
 
+| | |
+|---|---|
+| **Тема** | Освоение Node-RED как low-code инструмента |
+| **Репозиторий** | visual-programming-labs-Kliucnik- |
+| **Дисциплина** | Технологии визуального программирования |
+| **Студент** | Kliuchnik |
+| **Node-RED** | v5.0.8 |
+| **Node.js** | v24.21.0 |
+| **Способ установки** | npm (без Docker) |
 
-\## Краткое описание
+---
 
+## 1. Краткое описание
 
-
-Освоен Node-RED как low-code инструмент визуального программирования. 
-
+Освоен **Node-RED** как low-code инструмент визуального программирования. 
 Собраны и задеплоены потоки с базовыми и расширенными нодами: 
+`inject`, `debug`, `function`, `switch`, `change`, `template`, 
+`http request`, `mqtt`, `http in/response`, `file`, `context`.
 
-inject, debug, function, switch, change, template, http request, mqtt, 
+Каждый поток сохранён отдельным файлом `flow-NN-<имя>.json` в папке `lab2/flows/`, 
+скриншоты — в `lab2/screenshots/`.
 
-http in/response, file, context.
+---
 
+## 2. Установка и запуск
 
+**Способ установки:** npm (без Docker).
 
-\## Способ установки
-
-
-
-Установка через \*\*npm\*\* (без Docker).
-
+```bash
 npm install -g --unsafe-perm node-red
+node-red --userDir ./lab2/data
+Версии:
 
-node-red --userDir .\\lab2\\data
+Node-RED: v5.0.8
 
+Node.js: v24.21.0
 
+После запуска редактор доступен по адресу http://localhost:1880.
 
+3. Освоенные ноды
+Нода	Назначение	Где применена
+inject	Запуск потока, генерация сообщений	Все потоки
+debug	Вывод сообщений в боковую панель	Все потоки
+function	JS-логика обработки сообщения	flow-02, 03, 08, 12
+switch	Ветвление по условию	flow-03
+change	Изменение свойств сообщения	flow-04
+template	Формирование текста/JSON по Mustache	flow-05
+http request	Запрос к внешнему API	flow-06
+mqtt in / mqtt out	Обмен через MQTT-брокер	flow-07
+http in / http response	REST-эндпоинты	flow-08
+write file / read file	Работа с файлами	flow-11
+flow context	Хранение состояния между сообщениями	flow-12
+4. Список потоков
+№	Файл	Что демонстрирует
+01	flow-01-inject-debug.json	Базовый inject → debug
+02	flow-02-function.json	Function node с JS-логикой
+03	flow-03-switch.json	Ветвление switch по msg.payload
+04	flow-04-change.json	Change node: topic, timestamp, payload
+05	flow-05-template.json	Mustache-шаблон
+06	flow-06-http-request.json	GET-запрос к публичному API
+07	flow-07-mqtt.json	Публикация и подписка через hivemq
+08	flow-08-endpoints.json	3 GET-эндпоинта
+11	flow-11-files.json	Запись и чтение файла
+12	flow-12-context.json	Счётчик в flow context
+5. Использованные AI-промпты
+«Сгенерируй JS-код для function node в Node-RED: использует let/const, if/else, цикл for, массив и объект, возвращает { payload: ... }»
 
+«Сгенерируй Mustache-шаблон для template node, который из объекта {name, age, city} формирует JSON»
 
-\## Версии
+«Напиши function node для GET-эндпоинта /api/items, который валидирует query-параметр id и возвращает статусы 400, 404 или 200»
 
+6. Не выполнено
+2.9 Dashboard — требует установки node-red-dashboard, планируется доделать отдельно.
 
+2.10 Telegram-бот — требует создания бота через BotFather, планируется доделать отдельно.
 
-\- \*\*Node-RED:\*\* v5.0.8
+7. Выводы
+Node-RED позволяет собирать потоки обработки данных без написания большого количества кода — ноды соединяются визуально, а логика задаётся в настройках или коротких JS-функциях.
 
-\- \*\*Node.js:\*\* v24.21.0
+Инструмент удобен для быстрого прототипирования:
 
+REST API (http in / http response)
 
+Обмена сообщениями через MQTT
 
-\## Освоенные ноды
+Работы с файлами и внешними API
 
+Хранения состояния в контексте
 
+Основная сложность — освоить специфику отдельных нод (switch, change) и правильно настраивать типы данных (msg.payload, msg.topic, типы значений).
 
-| Нода | Где применена |
+8. Скриншоты
+Все скриншоты находятся в папке lab2/screenshots/:
 
-|------|---------------|
+00-versions.png — версии Node-RED и Node.js
 
-| inject | все потоки |
+01-inject-debug.png — базовый поток
 
-| debug | все потоки |
+02-function.png — function node
 
-| function | flow-02, flow-03, flow-08 |
+03-switch.png — switch
 
-| switch | flow-03 |
+04-change.png — change
 
-| change | flow-04 |
+05-template.png — template
 
-| template | flow-05 |
+06-http-request.png — http request
 
-| http request | flow-06 |
+07-mqtt.png — mqtt
 
-| mqtt in / mqtt out | flow-07 |
+08a-08f-endpoints-*.png — 5 эндпоинтов + схема
 
-| http in / http response | flow-08 |
+11-files.png — файлы
 
-| write file / read file | flow-11 |
-
-
-
-\## Список flow
-
-
-
-\- flow-01-inject-debug
-
-\- flow-02-function
-
-\- flow-03-switch
-
-\- flow-04-change
-
-\- flow-05-template
-
-\- flow-06-http-request
-
-\- flow-07-mqtt
-
-\- flow-08-endpoints
-
-\- flow-11-files
-
-\- flow-12-context
-
-
-
-\## AI-промпты
-
-
-
-\- «Сгенерируй JS-код для function node в Node-RED: использует let/const, if/else, цикл for, массив, объект, возвращает {payload: ...}»
-
-\- «Сгенерируй Mustache-шаблон для Node-RED template node, который формирует JSON из объекта»
-
-\- «Напиши function node для GET-эндпоинта с валидацией query-параметра id, возвращает 400/404/200»
-
-
-
-\## Выводы
-
-
-
-Node-RED позволяет собирать потоки обработки данных без написания 
-
-большого количества кода — ноды соединяются визуально, а логика 
-
-задаётся в настройках или в коротких JS-функциях. Удобно для 
-
-быстрого прототипирования API, MQTT-обмена, работы с файлами и 
-
-контекстом. Основная сложность — освоить специфику отдельных нод 
-
-(switch, change) и правильно настраивать типы данных.
-
+12-context.png — контекст
