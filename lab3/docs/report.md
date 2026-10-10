@@ -80,6 +80,17 @@ Commit: Add prompt and generation result
 
 ![Global variables](../screenshots/03-global-variable.png)
 
+### 3.3. Создать новый стиль
+
+Создала новый стиль кнопки **`my-primary-button`** на основе глобальной переменной **Primary**:
+- Background: Primary (#1325AE)
+- Border radius: 10
+- Text: Primary contrast
+
+Стиль применён к кнопкам в приложении.
+
+![Новый стиль](../screenshots/04-style.png)
+
 ## Часть 4. Data и Workflows
 
 (будет заполнено)
