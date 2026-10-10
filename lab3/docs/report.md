@@ -66,9 +66,9 @@ Commit: Add prompt and generation result
 
 ## Часть 3. Ручная доработка UI
 
-(будет заполнено)
+Изменила текст заголовка в Header (reusable element) с «База контактов» на «База контактов — София».
 
----
+![Изменённый заголовок](screenshots/03-header-change.png)
 
 ## Часть 4. Data и Workflows
 
