@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | **Тема** | Освоение Node-RED как low-code инструмента |
-| **Репозиторий** | [visual-programming-labs-Kliucnik-](https://github.com/SOFIYA-KL/visual-programming-labs-Kliucnik-) |
+| **Репозиторий** | visual-programming-labs-Kliucnik- |
 | **Дисциплина** | Технологии визуального программирования |
 | **Студент** | Kliuchnik |
 | **Node-RED** | v5.0.8 |
@@ -16,14 +16,9 @@
 
 ## 1. Краткое описание
 
-Освоен **Node-RED** как low-code инструмент визуального программирования. 
-Собраны и задеплоены потоки с базовыми и расширенными нодами: 
-`inject`, `debug`, `function`, `switch`, `change`, `template`, 
-`http request`, `mqtt`, `http in/response`, `file`, `context`, 
-`dashboard (gauge/chart)`, `telegram`.
+Освоен **Node-RED** как low-code инструмент визуального программирования. Собраны и задеплоены потоки с базовыми и расширенными нодами: `inject`, `debug`, `function`, `switch`, `change`, `template`, `http request`, `mqtt`, `http in/response`, `file`, `context`, `dashboard (gauge/chart)`, `telegram`.
 
-Каждый поток сохранён отдельным файлом `flow-NN-<имя>.json` в папке `lab2/flows/`, 
-скриншоты — в `lab2/screenshots/`.
+Каждый поток сохранён отдельным файлом `flow-NN-<имя>.json` в папке `lab2/flows/`, скриншоты — в `lab2/screenshots/`.
 
 ---
 
@@ -34,21 +29,21 @@
 ```bash
 npm install -g --unsafe-perm node-red
 npm install -g node-red-dashboard node-red-contrib-telegrambot
-node-red --userDir ./lab2/data
-Версии:
+node-red --userDir ./lab2/dataВерсии:
 
 Node-RED: v5.0.8
 
 Node.js: v24.21.0
 
-После запуска редактор доступен по адресу http://localhost:1880,
-dashboard — по адресу http://localhost:1880/ui.
+Редактор доступен по адресу http://localhost:1880, dashboard — http://localhost:1880/ui.
+
+https://./screenshots/00-versions.png
 
 3. Освоенные ноды
 Нода	Назначение	Где применена
 inject	Запуск потока, генерация сообщений	Все потоки
 debug	Вывод сообщений в боковую панель	Все потоки
-function	JS-логика обработки сообщения	flow-02, 03, 08, 12, 09, 10
+function	JS-логика обработки сообщения	flow-02, 03, 08, 09, 10, 12
 switch	Ветвление по условию	flow-03
 change	Изменение свойств сообщения	flow-04
 template	Формирование текста/JSON по Mustache	flow-05
@@ -68,13 +63,13 @@ flow context	Хранение состояния между сообщениям
 05	flow-05-template.json	Mustache-шаблон
 06	flow-06-http-request.json	GET-запрос к публичному API
 07	flow-07-mqtt.json	Публикация и подписка через hivemq
-08	flow-08-endpoints.json	3 GET-эндпоинта /api/text, /api/info, /api/items
+08	flow-08-endpoints.json	3 GET-эндпоинта
 09	flow-09-dashboard.json	Gauge + chart, обновление раз в 5 сек
 10	flow-10-telegram.json	Бот с командой /start и echo
 11	flow-11-files.json	Запись и чтение JSON-файла
 12	flow-12-context.json	Счётчик в flow context
 5. REST API
-Все эндпоинты описаны подробно в docs/api.md.
+Все эндпоинты описаны подробно в lab2/docs/api.md.
 
 Метод	URL	Ответ
 GET	/api/text	Простой текст
@@ -109,21 +104,45 @@ Telegram-ботов
 Основная сложность — освоить специфику отдельных нод (switch, change) и правильно настраивать типы данных (msg.payload, msg.topic, типы значений).
 
 8. Скриншоты
-Все скриншоты находятся в папке lab2/screenshots/:
+2.1 Inject → Debug
+https://./screenshots/01-inject-debug.png
 
-Файл	Что показано
-00-versions.png	Версии Node-RED и Node.js
-01-inject-debug.png	Базовый поток
-02-function.png	Function node
-03-switch.png	Switch с ветвлением
-04-change.png	Change (topic, timestamp, payload)
-05-template.png	Template (Mustache)
-06-http-request.png	HTTP-запрос к API
-07-mqtt.png	MQTT publish + subscribe
-08a-08f-endpoints-*.png	5 эндпоинтов + схема
-09-dashboard-flow.png	Схема flow Dashboard
-09-dashboard-ui.png	UI с gauge и chart
-10-telegram-flow.png	Схема flow Telegram
-10-telegram-chat.png	Чат с ботом
-11-files.png	Работа с файлами
-12-context.png	Контекст (счётчик)
+2.2 Function
+https://./screenshots/02-function.png
+
+2.3 Switch
+https://./screenshots/03-switch.png
+
+2.4 Change
+https://./screenshots/04-change.png
+
+2.5 Template
+https://./screenshots/05-template.png
+
+2.6 HTTP Request
+https://./screenshots/06-http-request.png
+
+2.7 MQTT
+https://./screenshots/07-mqtt.png
+
+2.8 GET-эндпоинты
+https://./screenshots/08a-endpoints-text.png
+https://./screenshots/08b-endpoints-info.png
+https://./screenshots/08c-endpoints-items-success.png
+https://./screenshots/08d-endpoints-items-404.png
+https://./screenshots/08e-endpoints-items-400.png
+https://./screenshots/08f-endpoints-flow.png
+
+2.9 Dashboard
+https://./screenshots/09-dashboard-flow.png
+https://./screenshots/09-dashboard-ui.png
+
+2.10 Telegram
+https://./screenshots/10-telegram-flow.png
+https://./screenshots/10-telegram-chat.png
+
+2.11 Файлы
+https://./screenshots/11-files.png
+
+2.12 Контекст
+https://./screenshots/12-context.png
