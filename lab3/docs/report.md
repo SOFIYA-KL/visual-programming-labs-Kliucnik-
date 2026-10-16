@@ -93,9 +93,37 @@ Commit: Add prompt and generation result
 
 ## Часть 4. Data и Workflows
 
-(будет заполнено)
+### 4.1. Data: сущность «Контакт»
 
----
+AI-агент создал Data Type **Контакт** со следующими полями:
+- Email (text)
+- Владелец (User)
+- Дата рождения (date)
+- Имя (text)
+- Категория (Категория контакта)
+- Статус (Статус контакта)
+- Телефон (text)
+
+![Data Type Контакт](../screenshots/06-data-type.png)
+
+В App Data — 16 записей контактов (AI-генерация).
+
+![Записи](../screenshots/07-data-records.png)
+
+### 4.2. Workflows: CRUD
+
+На странице `contacts` реализованы workflows для полного CRUD:
+
+**Create** — workflow `Form open new` открывает форму нового контакта, `Form save` сохраняет запись.
+![Create](../screenshots/08-workflow-create.png)
+
+**Update** — workflow `Form open edit` открывает форму редактирования существующего контакта.
+![Update](../screenshots/09-workflow-update.png)
+
+**Delete** — workflow `Del confirm` удаляет выбранный контакт.
+![Delete](../screenshots/10-workflow-delete.png)
+
+Все workflows проверены в Preview.
 
 ## Часть 6. Отчёт
 
