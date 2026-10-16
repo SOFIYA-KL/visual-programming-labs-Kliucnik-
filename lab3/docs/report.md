@@ -114,13 +114,16 @@ AI-агент создал Data Type **Контакт** со следующим�
 
 На странице `contacts` реализованы workflows для полного CRUD:
 
-**Create** — workflow `Form open new` открывает форму нового контакта, `Form save` сохраняет запись.
+**Create** — workflow Form open new открывает форму нового контакта, Form save сохраняет запись.
+
 ![Create](../screenshots/08-workflow-create.png)
 
-**Update** — workflow `Form open edit` открывает форму редактирования существующего контакта.
+**Update** — workflow Form open edit открывает форму редактирования существующего контакта.
+
 ![Update](../screenshots/09-workflow-update.png)
 
-**Delete** — workflow `Del confirm` удаляет выбранный контакт.
+**Delete** — workflow Del confirm удаляет выбранный контакт.
+
 ![Delete](../screenshots/10-workflow-delete.png)
 
 Все workflows проверены в Preview.
