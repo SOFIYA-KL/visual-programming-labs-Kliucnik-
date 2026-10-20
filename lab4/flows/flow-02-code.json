@@ -1,0 +1,77 @@
+{
+  "name": "My workflow 2",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "85c06afe-de9c-4e12-9453-a7f45e61170f",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "jsCode": "const users = [\"Sofia\", \"Ivan\", \"Petr\"];\nlet payload = \"\";\n\nfor (let i = 0; i < users.length; i++) {\n  if (users[i] === \"Sofia\") {\n    payload = \"Найдена София!\";\n  } else {\n    payload = \"Обычный пользователь\";\n  }\n}\n\nconst result = {\n  myArray: users,\n  myObject: { status: \"ok\", info: \"success\" },\n  payload: payload\n};\n\nreturn {\n  json: result\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        224,
+        0
+      ],
+      "id": "b6da1681-cc49-4252-b5f9-1f39687f9108",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        448,
+        0
+      ],
+      "id": "322a66b8-5365-4aa8-afa5-1a71eb6ed031",
+      "name": "No Operation, do nothing"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "9825e36b-15c9-4f82-b992-8495ff84bf35",
+  "meta": {
+    "instanceId": "34def8cff3c3d38068209419b2b97ed6c131cee21d5bf06eaf7a967879ece40b"
+  },
+  "nodeGroups": [],
+  "id": "kOdsqN6D2U9AJTwT",
+  "tags": []
+}
