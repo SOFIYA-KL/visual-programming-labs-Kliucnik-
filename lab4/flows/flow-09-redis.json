@@ -1,0 +1,80 @@
+{
+  "name": "My workflow 5",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "9486c70c-da04-4c24-a64f-5d10645c2b63",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "url": "https://api.chucknorris.io/jokes/random",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        224,
+        0
+      ],
+      "id": "5d3166d6-0dc4-46b9-aa95-7d45eafc9a4d",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "jsCode": "return { json: $input.first().json };"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        448,
+        0
+      ],
+      "id": "3b4f919c-092f-4d05-874e-40278936119f",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "3d733849-b933-4630-9f7c-d95c324d0795",
+  "meta": {
+    "instanceId": "34def8cff3c3d38068209419b2b97ed6c131cee21d5bf06eaf7a967879ece40b"
+  },
+  "nodeGroups": [],
+  "id": "FqMrKVmat5MPqUhl",
+  "tags": []
+}
