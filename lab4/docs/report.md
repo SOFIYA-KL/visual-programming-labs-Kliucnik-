@@ -60,10 +60,21 @@ docker run -d --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n -v n8n_files:/
 ![Workflow 6](../screenshots/07-schedule.png)
 
 ---
-
 ## Часть 3. Redis: создание и удаление ключа
 
-Redis запущен через Docker:
+Redis запущен через Docker (подробное описание работы с Redis находится в файле [docs/redis.md](redis.md)).
+
+**1. Создание и чтение ключа:**
+С помощью ноды `Redis (Set)` создан ключ `kliucnik`, затем нода `Redis (Get)` успешно прочитала его значение.
+
+![Создание и чтение ключа](../screenshots/08-redis-set.png)
+
+**2. Удаление и проверка:**
+С помощью ноды `Redis (Delete)` ключ `kliucnik` был удалён. Нода `Redis (Get)` подтвердила отсутствие ключа.
+
+![Удаление ключа](../screenshots/09-redis-delete.png)
+
+---
 
 ## Выводы
 
@@ -74,3 +85,20 @@ Redis запущен через Docker:
 Все 6 workflow из Части 2 и 2 workflow из Части 3 проверены, работают корректно, JSON-файлы приложены в папке `flows/`.
 ```bash
 docker run -d --name redis -p 6379:6379 redis:7
+```
+В n8n созданы credentials для подключения:
+- **Host:** `host.docker.internal`
+- **Port:** `6379`
+
+Собраны и проверены два workflow для работы с ключом `kliucnik`:
+
+**1. Создание и чтение ключа (`flow-09-redis.json`)**
+С помощью ноды `Redis (Set)` был создан ключ `kliucnik` со значением «Привет от Софии!». Затем с помощью ноды `Redis (Get)` значение было успешно прочитано.
+
+![Создание и чтение ключа](../screenshots/08-redis-set.png)
+
+**2. Удаление и проверка (`flow-10-redis.json`)**
+С помощью ноды `Redis (Delete)` ключ `kliucnik` был удалён. Затем нода `Redis (Get)` подтвердила, что ключа больше нет (значение не возвращается).
+
+![Удаление ключа](../screenshots/09-redis-delete.png)
+
