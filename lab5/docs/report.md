@@ -38,11 +38,14 @@
 ![Регистрация](../screenshots/01-registration.png)
 ![Подключение Telegram](../screenshots/02-channel.png)
 
-**Сценарий в ManyChat:**
+**Сценарии в ManyChat:**
 ![Флоу Приветствие](../screenshots/03-flow-welcome.png)
+![Флоу FAQ](../screenshots/04-flow-faq.png)
+![Флоу Сбор лида](../screenshots/05-flow-lead.png)
 
-**Админка (Inbox):**
-![Админка](../screenshots/06-admin.png)
+**Админка и тестирование:**
+![Админка (Inbox)](../screenshots/06-admin.png)
+![Тест в ТГ](../screenshots/08-telegram-test.png)
 
 **Ограничения Free-тарифа:**
 ![Тарифы](../screenshots/07-limits.png)
