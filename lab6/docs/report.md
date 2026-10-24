@@ -28,8 +28,14 @@
 - Блоки: `when ... Click`, `if then`, `=`, `≠`, `set ... Text`, `join`.
 
 ## 5. Скриншоты
-- Экран дизайнера: `![Screen1](../screenshots/01-screen1.png)`
-- Блоки логики: `![Blocks](../screenshots/02-blocks-base.png)`
+
+Экран дизайнера:
+
+![Screen1](../screenshots/01-screen1.png)
+
+Блоки логики:
+
+![Blocks](../screenshots/02-blocks-base.png)
 
 ## 6. Ограничения бесплатного тарифа Kodular
 - До 10 проектов.
